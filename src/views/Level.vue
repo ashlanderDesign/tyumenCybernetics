@@ -16,7 +16,7 @@
     		</div>
     	</div>
     	<div class="browser-content">
-    		
+
     	</div>
     </div>
     <div class="phone on">
@@ -28,9 +28,16 @@
     			12:42
     		</div>
     		<div class="battery">
-    			
+    			<img src="../assets/battery.png" alt="">
     		</div>
     	</div>
+      <div class="phone-content">
+        <div class="phone-messages">
+          <div class="header">
+            <span>Сообщения</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -58,6 +65,11 @@
 		position: relative;
 	}
 
+  .phone-messages .header{
+    width: 100%;
+    background-color: #dedede;
+  }
+
 	.phone .statusbar{
 		width: 100%;
 		height: 7%;
@@ -72,6 +84,21 @@
 		align-items: center;
 		justify-content: space-around;
 	}
+
+  .phone .phone-content{
+    width: 100%;
+    height: 93%;
+    background-color: #cecece;
+    border-radius: 0 0 18px 18px;
+  }
+
+  .statusbar .battery{
+    width: 10%;
+  }
+
+  .battery img{
+    width: 100%;
+  }
 
 	.browser .titlebar{
 		width: 100%;

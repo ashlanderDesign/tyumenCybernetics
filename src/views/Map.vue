@@ -17,26 +17,26 @@
     <div class="map">
       <div class="level open">
         <span>1</span>
-      	<router-link to="/level" class="level-icon">Авторизуйся, это так просто.</router-link>
+      	<router-link to="/level?id=1" class="level-icon">Авторизуйся, это так просто.</router-link>
       </div>
       <div class="level">
         <span>2</span>
-      	<router-link to="/level" class="level-icon">Давай знакомиться</router-link>
+      	<router-link to="/level?id=2" class="level-icon">Давай знакомиться</router-link>
       </div>
       <div class="level">
         <span>3</span>
-      	<router-link to="/level" class="level-icon">Социальная жизнь</router-link>
+      	<router-link to="/level?id=3" class="level-icon">Социальная жизнь</router-link>
       </div>
       <div class="level">
         <span>4</span>
-      	<router-link to="/level" class="level-icon">Ящиков - много не бывает</router-link>
+      	<router-link to="/level?id=4" class="level-icon">Ящиков - много не бывает</router-link>
       </div>
       <div class="level stage">
-      	<router-link to="/level" class="level-icon">5</router-link>
+      	<router-link to="/level?id=5" class="level-icon">5</router-link>
       </div>
       <div class="level">
         <span>6</span>
-        <router-link to="/level" class="level-icon">Сёрфер учит сёрфить</router-link>
+        <router-link to="/level?id=6" class="level-icon">Сёрфер учит сёрфить</router-link>
       </div>
     </div>
   </div>

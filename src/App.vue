@@ -1,16 +1,6 @@
 <template>
   <div id="app">
-    <!--<header>
-      <div class="account">
-        <div class="user-image"><img src="#" alt=""></div>
-        <span class="username">Test</span>
-      </div>
-      <div class="score">
-        <div class="icon"><img src="./assets/bitcoin.png"></div>
-        <span class="value">100</span>
-      </div>
-      <div class="menu"><img src="./assets/menu.png" alt="icon"></div>
-    </header>-->
+
     <div class="content">
       <router-view />
     </div>
@@ -19,7 +9,12 @@
 
 <script>
   export default{
-
+    data: function(){
+      return {
+        page: 'home',
+        hint: true
+      }
+    }
   }
 </script>
 
@@ -33,6 +28,77 @@ font-face {
   margin: 0;
   padding: 0;
   font-family: 'Montserrat', sans-serif;
+}
+
+.hint{
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  z-index: 99999;
+}
+
+.show-hint{
+  position: fixed;
+  left: 5px;
+  bottom: 5px;
+  background: transparent;
+  border: none;
+  filter: invert(75%);
+}
+
+.hint .hint-body{
+  width: 40vw;
+  height: 30vh;
+  padding: 5px;
+  background-color: #4877fb;
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  border-radius: 7px;
+}
+
+.hint .hint-body .text{
+  width: 100%;
+  height: 70%;
+  font-size: 1.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.hint-body .close{
+  width: 20%;
+  height: 20%;
+  border: none;
+  border-radius: 7px;
+  background-color: transparent;
+  color: #fff;
+  font-size: 1.2rem;
+  position: absolute;
+  left: 5px;
+  bottom: 5px;
+}
+
+.hint-body .showExtra{
+  width: 20%;
+  height: 20%;
+  border: none;
+  border-radius: 7px;
+  background-color: transparent;
+  color: #fff;
+  font-size: 1.2rem;
+  position: absolute;
+  left: calc(5px + 20% + 5px);
+  bottom: 5px;
+}
+
+.extra-hint{
+  position: fixed;
+  z-index: 9999999;
+  width: 60vw;
+  height: 60vh;
+  background-color: #4877fb;
 }
 
 .start{

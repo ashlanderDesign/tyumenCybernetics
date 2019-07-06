@@ -1,61 +1,68 @@
 <template>
-  <div class='background'>
-    <div class="map">
-    <div class="level one">
-    	<router-link to="/level" class="level-icon">ICON</router-link>
+  <div class="home-container">
+    <div class="logo">
+      <img src="../assets/logo.png" alt="">
     </div>
-    <div class="level two">
-    	<router-link to="/level" class="level-icon">ICON</router-link>
-    </div>
-    <div class="level three">
-    	<router-link to="/level" class="level-icon">ICON</router-link>
-    </div>
-    <div class="level 4">
-    	<router-link to="/level" class="level-icon">ICON</router-link>
-    </div>
+    <div class="form reg">
+      <h2>Регистрация</h2>
+      <input type="text" name="" class='form-login' value="" placeholder='Введите логин'>
+      <input type="password" class='form-password' name="" value="" placeholder='Введите пароль'>
+      <button class='form-button'>Сёрфить</button>
+      <a href="#">У меня уже есть аккаунт</a>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'home'
+  name: 'home',
+  data: function(){
+    return {
+      map: 0
+    }
+  }
 }
 </script>
 
 <style>
-  .background{
-    background-image: url('../assets/background.jpg');
+  a{
+    text-decoration: none;
   }
-	.map{
-		position: relative;
-		width: 100%;
-		height: 100%;
-	}
 
-	.level{
-		position: absolute;
-		background-color: #ababab;
-		padding: 15px;
-		border-radius: 14px;
-	}
+  .home-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    flex-wrap: wrap;
+  }
 
-	.level-icon {
-		text-decoration: none;
-	}
+  .form{
+    width: 30vw;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 
-	.level.one{
-		left: 40%;
-		top: 15%;
-	}
+  .form input{
+    width: 100%;
+    font-size: 1.5rem;
+    padding: 1vh 1vw;
+    margin-bottom: 1vh;
+    border-radius: 7px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+  }
 
-	.level.two{
-		left: 70%;
-		top: 30%;
-	}
-
-	.level.three{
-		left: 50%;
-		top: 20%;
-	}
+  .form button{
+    width: 100%;
+    font-size: 1.5rem;
+    padding: 1vh 1vw;
+    margin-bottom: 1vh;
+    border-radius: 7px;
+    border: none;
+    color: #fff;
+    background-color: #4877fb;
+  }
 </style>

@@ -69,6 +69,7 @@
 		box-sizing: border-box;
 		padding: 1vh .5vw;
 		position: relative;
+    box-shadow: 2px 0px 8px 0px rgba(0, 0, 0, 0.4);
 	}
 
   .phone-messages .header{

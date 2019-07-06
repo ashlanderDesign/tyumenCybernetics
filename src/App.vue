@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <header>
+    <!--<header>
       <div class="account">
         <div class="user-image"><img src="#" alt=""></div>
         <span class="username">Test</span>
@@ -10,33 +10,54 @@
         <span class="value">100</span>
       </div>
       <div class="menu"><img src="./assets/menu.png" alt="icon"></div>
-    </header>
+    </header>-->
     <div class="content">
       <router-view />
     </div>
   </div>
 </template>
 
+<script>
+  export default{
+
+  }
+</script>
+
 <style lang="scss">
+font-face {
+    font-family: Montserrat; /* Имя шрифта */
+    src: url(./assets/fonts/Montserrat.ttf); /* Путь к файлу со шрифтом */
+}
+
 *{
   margin: 0;
   padding: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.start{
+  border: none;
+  border-radius: 14px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  background-color: #4877fb;
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 5vh 10vw;
+  right: 50%;
+  top: 50%;
 }
 
 .content{
-  padding-top: 10vh;
-  background-color: #312b48;
   width: 100%;
   height: 100vh;
   box-sizing: border-box;
-  color: #fff;
+  color: #000;
+  background-color: #fff;
 }
 
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Montserrat', Helvetica, Arial, sans-serif;
   text-align: center;
   color: #2c3e50;
 }
@@ -71,15 +92,25 @@ header .account{
   justify-content: flex-start;
 }
 
-.account .username{
-  margin-left: 1vw;
-  font-weight:  600;
-  font-size:  1.2rem;
+.account .user-info{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.user-info .username{
+  width: 100%;
+  color: #4877fb;
+  font-size: 1.2rem;
+}
+
+.user-info .score .value{
+  color: #4877fb;
 }
 
 header img{
-  width: 64px;
-  height: 64px;
+  width: 32px;
+  height: 32px;
 }
 
 .account .user-image{
@@ -95,7 +126,4 @@ header .score{
   justify-content: flex-start;
 }
 
-.score .value{
-  margin-left:  1vw;
-}
 </style>

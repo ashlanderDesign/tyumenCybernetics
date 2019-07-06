@@ -1,5 +1,5 @@
 <template>
-  <div class="content">
+  <div>
     <h1>Название уровня</h1>
     <div class="browser off">
     	<div class="titlebar">
@@ -32,9 +32,15 @@
     		</div>
     	</div>
       <div class="phone-content">
-        <div class="phone-messages">
+        <div class="phone-messages on">
           <div class="header">
             <span>Сообщения</span>
+          </div>
+          <div class="message">
+
+          </div>
+          <div class="new-message">
+            Написать сообщение
           </div>
         </div>
       </div>
@@ -67,7 +73,12 @@
 
   .phone-messages .header{
     width: 100%;
-    background-color: #dedede;
+    background-color: #fdac00;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 1vw 1vh;
+    box-sizing: border-box;
   }
 
 	.phone .statusbar{
@@ -83,6 +94,7 @@
 		-ms-align-items: center;
 		align-items: center;
 		justify-content: space-around;
+    font-size: .8rem;
 	}
 
   .phone .phone-content{
@@ -90,10 +102,44 @@
     height: 93%;
     background-color: #cecece;
     border-radius: 0 0 18px 18px;
+    transform: translate(-50%, -50%);
+		left: 50%;
+		top: 46%;
+    position: relative;
+  }
+
+  .phone-messages .new-message{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    bottom: 2%;
+    width: 70%;
+    background-color: #1365f5;
+    padding: 2vh 1vw;
+    border-radius: 50px;
+    box-shadow: 1px 0px 10px 0px rgba(0, 0, 0, 0.4);
+    box-sizing: border-box;
+    left: 50%;
   }
 
   .statusbar .battery{
-    width: 10%;
+    width: 8%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .statusbar .signal{
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .statusbar .time{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .battery img{

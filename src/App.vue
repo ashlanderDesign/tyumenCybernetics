@@ -6,10 +6,10 @@
         <span class="username">Test</span>
       </div>
       <div class="score">
-        <div class="icon">Счет:</div>
+        <div class="icon"><img src="./assets/bitcoin.png"></div>
         <span class="value">100</span>
       </div>
-      <div class="menu"><img src="" alt="icon"></div>
+      <div class="menu"><img src="./assets/menu.png" alt="icon"></div>
     </header>
     <div class="content">
       <router-view />
@@ -23,6 +23,16 @@
   padding: 0;
   font-family: 'Roboto', sans-serif;
 }
+
+.content{
+  padding-top: 10vh;
+  background-color: #312b48;
+  width: 100%;
+  height: 100vh;
+  box-sizing: border-box;
+  color: #fff;
+}
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -50,21 +60,26 @@ header{
   box-sizing: border-box;
   padding: 2vh 2vw;
   color: #fff;
-  display: flex;  
-  align-items: center;  
-  justify-content: space-between;  
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 header .account{
-  display: flex;  
-  align-items: center;  
-  justify-content: flex-start; 
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .account .username{
   margin-left: 1vw;
   font-weight:  600;
   font-size:  1.2rem;
+}
+
+header img{
+  width: 64px;
+  height: 64px;
 }
 
 .account .user-image{
@@ -75,9 +90,9 @@ header .account{
 }
 
 header .score{
-  display: flex;  
+  display: flex;
   align-items: center;
-  justify-content: flex-start;  
+  justify-content: flex-start;
 }
 
 .score .value{

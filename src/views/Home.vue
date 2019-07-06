@@ -1,5 +1,5 @@
 <template>
-  <div class="content">
+  <div class='background'>
     <div class="map">
     <div class="level one">
     	<router-link to="/level" class="level-icon">ICON</router-link>
@@ -23,20 +23,14 @@ export default {
 }
 </script>
 
-<style>	
-	.content{
-		padding-top: 10vh;
-		background-color: #312b48;
-		width: 100%;
-		height: 100vh;
-		box-sizing: border-box;
-		color: #fff;	
-	}
-
+<style>
+  .background{
+    background-image: url('../assets/background.jpg');
+  }
 	.map{
-		position: relative;	
-		width: 100%;	
-		height: 100%;	
+		position: relative;
+		width: 100%;
+		height: 100%;
 	}
 
 	.level{
@@ -51,12 +45,12 @@ export default {
 	}
 
 	.level.one{
-		left: 40%;	
-		top: 15%;		
+		left: 40%;
+		top: 15%;
 	}
 
 	.level.two{
-		left: 70%;	
+		left: 70%;
 		top: 30%;
 	}
 

@@ -28,6 +28,10 @@ font-face {
   margin: 0;
   padding: 0;
   font-family: 'Montserrat', sans-serif;
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;
 }
 
 .hint{
@@ -50,7 +54,7 @@ font-face {
   width: 40vw;
   height: 30vh;
   padding: 5px;
-  background-color: #4877fb;
+  background-color: #3067ff;
   position: absolute;
   right: 5px;
   bottom: 5px;
@@ -98,7 +102,7 @@ font-face {
   z-index: 9999999;
   width: 60vw;
   height: 60vh;
-  background-color: #4877fb;
+  background-color: #3067ff;
 }
 
 .start{
@@ -106,7 +110,7 @@ font-face {
   border-radius: 14px;
   position: absolute;
   transform: translate(-50%, -50%);
-  background-color: #4877fb;
+  background-color: #3067ff;
   color: #fff;
   font-size: 1.2rem;
   padding: 5vh 10vw;
@@ -120,6 +124,8 @@ font-face {
   box-sizing: border-box;
   color: #000;
   background-color: #fff;
+  background-image: url("./assets/bg_test.jpg");
+  background-size: cover;
 }
 
 #app {
@@ -166,12 +172,12 @@ header .account{
 
 .user-info .username{
   width: 100%;
-  color: #4877fb;
+  color: #3067ff;
   font-size: 1.2rem;
 }
 
 .user-info .score .value{
-  color: #4877fb;
+  color: #3067ff;
 }
 
 header img{

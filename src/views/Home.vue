@@ -4,11 +4,13 @@
       <img src="../assets/logo.png" alt="">
     </div>
     <div class="form reg">
-      <h2>Регистрация</h2>
+      <h2 v-if='method == "register"'>Регистрация</h2>
+      <h2 v-if='method == "login"'>Авторизация</h2>
       <input type="text" name="" class='form-login' value="" placeholder='Введите логин'>
       <input type="password" class='form-password' name="" value="" placeholder='Введите пароль'>
       <button class='form-button'>Сёрфить</button>
-      <a href="#">У меня уже есть аккаунт</a>
+      <a href="#" v-if='method == "register"' v-on:click="method = 'login'">У меня уже есть аккаунт</a>
+      <a href="#" v-if='method == "login"' v-on:click="method = 'register'">У меня нет аккаунта</a>
     </div>
   </div>
 </template>
@@ -18,13 +20,18 @@ export default {
   name: 'home',
   data: function(){
     return {
-      map: 0
+      map: 0,
+      method: "register"
     }
   }
 }
 </script>
 
 <style>
+  h1, h2{
+    color: #fff;
+  }
+
   a{
     text-decoration: none;
   }
@@ -52,7 +59,7 @@ export default {
     padding: 1vh 1vw;
     margin-bottom: 1vh;
     border-radius: 7px;
-    border: 1px solid rgba(0, 0, 0, 0.4);
+    border: none;
   }
 
   .form button{
@@ -63,6 +70,6 @@ export default {
     border-radius: 7px;
     border: none;
     color: #fff;
-    background-color: #4877fb;
+    background-color: #3067ff;
   }
 </style>

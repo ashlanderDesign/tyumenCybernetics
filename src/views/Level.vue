@@ -38,6 +38,16 @@
           <input type="password" name="" value="" placeholder='Введите пароль'>
           <button class="send">Отправить</button>
         </div>
+        <div class="level-2" v-if='this.$route.query.id == 2'>
+        </div>
+        <div class="level-3" v-if='this.$route.query.id == 3'>
+        </div>
+        <div class="level-4" v-if='this.$route.query.id == 4'>
+        </div>
+        <div class="level-5" v-if='this.$route.query.id == 5'>
+        </div>
+        <div class="level-6" v-if='this.$route.query.id == 6'>
+        </div>
     	</div>
     </div>
     <div class="phone off">
@@ -226,7 +236,7 @@
 
   .browser-content .level-1 button{
     padding: 2% 4%;
-    background-color: #4877fb;
+    background-color: #3067ff;
     border-radius: 50px;
     border: none;
     color: #fff;

@@ -15,9 +15,10 @@
       </div>
     </header>
     <div class="map">
+      <h1>Выберите уровень</h1>
       <div class="level open">
         <span>1</span>
-      	<router-link to="/level?id=1" class="level-icon">Авторизуйся, это так просто.</router-link>
+      	<router-link to="/level?id=1" class="level-icon">Авторизуйся, это так просто</router-link>
       </div>
       <div class="level">
         <span>2</span>
@@ -64,21 +65,33 @@ export default {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  flex-wrap: wrap;
   box-sizing: border-box;
   padding: 0 2vw;
 }
+
+.map h1{
+  width: 100%;
+  color: #3067ff;
+  text-align: left;
+  font-size: 6rem;
+}
 .level {
   color: #cacaca;
-  background-color: #fff;
+  /*background-color: #fff;*/
   margin-right: 1vw;
   height: 30vh;
   width: 30vw;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  border-radius: 7px;
+  border-radius: 14px;
   box-sizing: border-box;
   border: 4px solid #cacaca;
+}
+
+.level:not(.open) *{
+  cursor: default;
 }
 
 .level span{
@@ -100,21 +113,22 @@ export default {
 }
 
 .level.open{
-  background-color: #fff;
-  border: 4px solid #4877fb;
-  color: #4877fb;
+  /*background-color: #fff;*/
+  border: 4px solid #3067ff;
+  color: #3067ff;
   transition: all .3s ease-in;
 }
 
 .level.open .level-icon{
-  color: #fff;
+  color: #3067ff;
 }
 
 .level.open:hover{
-  background-color: #4877fb;
+  background-color: #3067ff;
 }
 
 .level.open:hover .level-icon{
+  opacity: 1;
   color: #fff;
   transition: all .3s ease-in;
 }

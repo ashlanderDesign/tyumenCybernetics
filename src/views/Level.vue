@@ -7,22 +7,14 @@
       </div>
       <button class='close' v-on:click='extra = false'></button>
     </div>
-    <div class="hint" v-if='this.$route.name == "level" && hint'>
+    <div class="hint" v-if='this.$route.name == "level" && hint == true'>
       <div class="surfer">
         <img src="../assets/surfer.png" alt="">
       </div>
-      <div class="hint-body" v-if='dialogue'>
+      <div class="hint-body">
         <span class='text'>{{missions[this.$route.query.id - 1].dialogue}}</span>
         <button class='close' v-on:click='hint = false'>Понятно</button>
         <button class='showExtra' v-on:click='extra = true'>Подсказка</button>
-      </div>
-      <div class="hint-error" v-if='failure'>
-        <span class='text'>{{missions[this.$route.query.id - 1].wrong}}</span>
-        <button class='retry' onclick='location.reload()'>Попробовать снова</button>
-      </div>
-      <div class="hint-success" v-if='success'>
-        <span class='text'>{{missions[this.$route.query.id - 1].success}}</span>
-        <button>Продолжить</button>
       </div>
     </div>
     <h1>{{missions[this.$route.query.id - 1].title}}</h1>
@@ -42,21 +34,11 @@
     	</div>
     	<div class="browser-content">
         <div class="level-1" v-if='this.$route.query.id == 1'>
-          <span class='title'>Выберите надежный пароль</span>
-          <div class="answers">
-            <div v-on:click='check(1)' class="option">
-              ялюблюспать2019
-            </div>
-            <div v-on:click='check(2)' class="option">
-              hG7$ak9*3@p1\w92\*$fjwe89ej$%EYr8
-            </div>
-            <div v-on:click='check(3)' class="option">
-              qwerty12345
-            </div>
-          </div>
+          <span class='title'>Придумайте хороший пароль</span>
+          <input type="password" name="" value="" placeholder='Введите пароль'>
+          <button class="send">Отправить</button>
         </div>
         <div class="level-2" v-if='this.$route.query.id == 2'>
-          <span class='title'>Заполните форму</span>
         </div>
         <div class="level-3" v-if='this.$route.query.id == 3'>
         </div>
@@ -110,9 +92,7 @@
  Никогда не используйте один и тот же пароль в разных аккаунтах.
  Меняйте пароль каждые несколько месяцев.`,
             dialogue: `Здорова, мы начинаем наше путешествие по кибер пространству. Но для этого мне нужен
-надежный пароль. Помоги мне =)`,
-            wrong: `Ой, а пароль то очень слабый оказался, меня взломали:(`,
-            success: `Теперь даже русские хакеры не взломают мой аккаунт!`
+надежный пароль. Помоги мне =)`
           },
           {
             title: `Давай знакомится`,
@@ -123,9 +103,7 @@
 социальные сети и другие веб-сайты для сбора информации, которая затем используется против
 вас (на работе или дома).`,
             dialogue: `Теперь у тебя есть надежный пароль, но остался еще один важный шаг. Заполнить
-информацию о себе. Если не уверен, что именно стоит писать, используй подсказку.`,
-            wrong: `Откуда эти мошенники узнали мои личные данные...`,
-            success: `Замечательно, теперь я смогу общаться со своими друзьями в интернете!`
+информацию о себе. Если не уверен, что именно стоит писать, используй подсказку.`
           },
           {
             title: `Социальная жизнь`,
@@ -164,30 +142,9 @@
 то скорей всего сайт не настоящий и он может украсть твои данные. А также, если вам кажется
 что адрес сайта подозрительной, скорее всего так и есть. Не стоит посещать данные сайты.`,
             dialogue: `Эй,чувак, давай я научу тебя серфить в интернете и не падать на волнах. Первое, что тебе
-нужно сделать это выбрать правильную доску. Ну, что погнали?`,
-            wrong: ``,
+нужно сделать это выбрать правильную доску. Ну, что погнали?`
           }
         ],
-        levels: [
-          {
-            answer: 2
-          }
-        ],
-        failure: false,
-        success: false,
-        dialogue: true,
-        check: function(userAnswer){
-          if(userAnswer == this.levels[this.$route.query.id - 1].answer){
-            this.hint = true;
-            this.dialogue = false;
-            this.success = true;
-          }
-          if(userAnswer != this.levels[this.$route.query.id - 1].answer){
-            this.hint = true;
-            this.dialogue = false;
-            this.failure = true;
-          }
-        },
         hint: true,
         extra: false
       }
@@ -266,80 +223,6 @@
     background-color: #fff;
     border-radius: 14px;
     padding: 2%;
-  }
-
-  .hint-error{
-    width: 40vw;
-    height: 30vh;
-    padding: 5px;
-    background-color: red;
-    position: absolute;
-    right: 5px;
-    bottom: 5px;
-    border-radius: 7px;
-    box-sizing: border-box;
-  }
-
-  .hint-error .text{
-    width: 100%;
-    height: 80%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    font-size: 1.5rem;
-  }
-
-  .hint-error button{
-    background: transparent;
-    border: none;
-    font-size: 1.3rem;
-    color: #fff;
-  }
-
-  .hint-success{
-    width: 40vw;
-    height: 30vh;
-    padding: 5px;
-    background-color: #13dc13;
-    position: absolute;
-    right: 5px;
-    bottom: 5px;
-    border-radius: 7px;
-    box-sizing: border-box;
-  }
-
-  .hint-success .text{
-    width: 100%;
-    height: 80%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    font-size: 1.5rem;
-  }
-
-  .hint-success button{
-    border: none;
-    background: transparent;
-    font-size: 1.3rem;
-    color: #fff;
-  }
-
-  .answers{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    width: 70%;
-    margin: 0 auto;
-  }
-
-  .answers .option{
-    background-color: #cecece;
-    padding: 2% 4%;
-    border-radius: 50px;
-    margin: 2% 0;
   }
 
   .browser-content .level-1 input{

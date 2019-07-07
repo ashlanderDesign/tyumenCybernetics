@@ -9,7 +9,9 @@ export default new Vuex.Store({
   		name: '',
   		password: '',
       	score: 0
-  	}
+  	},
+  	playersList: ["Вася", "Петя", "Маша"],
+  	scoreList: [{name: "Вася", score: 250}, {name: "Петя", score: 500}, {name: "Маша", score: 1000}]
   },
   mutations: {
   	addPlayer(state, payload) {

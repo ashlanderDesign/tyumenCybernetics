@@ -68,7 +68,6 @@ export default {
   flex-wrap: wrap;
   overflow: hidden;
 }
-
 .map {
   min-width: 200vw;
   height: 60vh;

@@ -5,18 +5,18 @@
         <div class="user-image"></div>
         <div class="user-info">
           <div class="username">
-            Username
+            {{username}}
           </div>
           <div class="score">
             <img src="../assets/bitcoin.png" alt="">
-            <span class='value'>100</span>
+            <span class='value'>{{score}}</span>
           </div>
         </div>
       </div>
     </header>
     <div class="map">
       <h1>Выберите уровень</h1>
-      <div class="level open">
+      <div class="level open" @click="$router.push('/level?id=1')">
         <span>1</span>
       	<router-link to="/level?id=1" class="level-icon">Авторизуйся, это так просто</router-link>
       </div>
@@ -44,8 +44,17 @@
 </template>
 
 <script>
+import store from '../store'
+
 export default {
-  name: 'map',
+  computed: {
+    username() {
+      return store.state.players.name
+    },
+    score() {
+      return store.state.players.score
+    }
+  }
 }
 </script>
 
@@ -57,7 +66,7 @@ export default {
   height: 100%;
   width: 100%;
   flex-wrap: wrap;
-  overflow-x: scroll;
+  overflow: hidden;
 }
 .map {
   min-width: 200vw;
@@ -117,6 +126,7 @@ export default {
   border: 4px solid #3067ff;
   color: #3067ff;
   transition: all .3s ease-in;
+  cursor: pointer;
 }
 
 .level.open .level-icon{

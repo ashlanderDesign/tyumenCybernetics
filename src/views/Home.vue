@@ -6,9 +6,9 @@
     <div class="form reg">
       <h2 v-if='method == "register"'>Регистрация</h2>
       <h2 v-if='method == "login"'>Авторизация</h2>
-      <input type="text" name="" class='form-login' value="" placeholder='Введите логин'>
-      <input type="password" class='form-password' name="" value="" placeholder='Введите пароль'>
-      <button class='form-button'>Сёрфить</button>
+      <input v-model="username" type="text" name="username" class='form-login' value="" placeholder='Введите имя'>
+      <input v-model="password" type="password" class='form-password' name="password" value="" placeholder='Введите пароль'>
+      <button class='form-button' v-on:click="startSurf">Сёрфить</button>
       <a href="#" v-if='method == "register"' v-on:click="method = 'login'">У меня уже есть аккаунт</a>
       <a href="#" v-if='method == "login"' v-on:click="method = 'register'">У меня нет аккаунта</a>
     </div>
@@ -16,12 +16,24 @@
 </template>
 
 <script>
+import store from '../store'
+import router from '../router'
+
 export default {
   name: 'home',
   data: function(){
     return {
       map: 0,
-      method: "register"
+      method: "register",
+      username: '',
+      password: ''
+    }
+  },
+  methods: {
+    startSurf() {
+      let playerData = {name: this.username, password: this.password}
+      store.commit('addPlayer', playerData)
+      router.push('/map')
     }
   }
 }

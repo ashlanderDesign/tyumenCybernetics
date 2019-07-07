@@ -198,4 +198,7 @@ header .score{
   justify-content: flex-start;
 }
 
+button {
+  cursor: pointer;
+}
 </style>

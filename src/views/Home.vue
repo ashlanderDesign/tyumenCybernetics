@@ -8,7 +8,7 @@
       <h2 v-if='method == "login"'>Авторизация</h2>
       <input type="text" name="" class='form-login' value="" placeholder='Введите логин'>
       <input type="password" class='form-password' name="" value="" placeholder='Введите пароль'>
-      <button class='form-button'>Сёрфить</button>
+      <button class='form-button' v-on:click='user(method)'>Сёрфить</button>
       <a href="#" v-if='method == "register"' v-on:click="method = 'login'">У меня уже есть аккаунт</a>
       <a href="#" v-if='method == "login"' v-on:click="method = 'register'">У меня нет аккаунта</a>
     </div>
@@ -21,7 +21,16 @@ export default {
   data: function(){
     return {
       map: 0,
-      method: "register"
+      method: "register",
+      user: function(method){
+        let login = document.getElementByClassName("form-login")[0].value;
+        let password = document.getElementByClassName("form-password")[0].value;
+        if(login && password){
+          if(login == 'Denis' && password == 'opengl'){
+            
+          }
+        }
+      }
     }
   }
 }

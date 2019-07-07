@@ -5,7 +5,7 @@
       <div class="text">
         {{missions[this.$route.query.id - 1].theory}}
       </div>
-      <button class='close' v-on:click='extra = false'></button>
+      <button class='close' v-on:click='extra = false'>Закрыть</button>
     </div>
     <div class="hint" v-if='this.$route.name == "level" && hint'>
       <div class="surfer">
@@ -22,7 +22,7 @@
       </div>
       <div class="hint-success" v-if='success'>
         <span class='text'>{{missions[this.$route.query.id - 1].success}}</span>
-        <button>Продолжить</button>
+        <button @click="toMap">Продолжить</button>
       </div>
     </div>
     <h1>{{missions[this.$route.query.id - 1].title}}</h1>
@@ -47,7 +47,7 @@
             <div v-on:click='check(1)' class="option">
               ялюблюспать2019
             </div>
-            <div v-on:click='check(2)' class="option">
+            <div v-on:click='check(2)' @click="succesAnswer" class="option">
               hG7$ak9*3@p1\w92\*$fjwe89ej$%EYr8
             </div>
             <div v-on:click='check(3)' class="option">
@@ -96,7 +96,10 @@
     </div>
   </div>
 </template>
+
 <script>
+import store from '../store'
+
   export default{
     data: function(){
       return {
@@ -190,6 +193,15 @@
         },
         hint: true,
         extra: false
+      }
+    },
+    methods: {
+      toMap() {
+        this.$router.push('/map')
+        store.commit('updateLevel', true)
+      },
+    succesAnswer() {
+      store.commit('updateScore', 50)
       }
     }
   }
@@ -340,6 +352,7 @@
     padding: 2% 4%;
     border-radius: 50px;
     margin: 2% 0;
+    cursor: pointer;
   }
 
   .browser-content .level-1 input{

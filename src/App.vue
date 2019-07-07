@@ -2,7 +2,9 @@
   <div id="app">
 
     <div class="content">
-      <router-view />
+      <transition>
+        <router-view />
+      </transition>
     </div>
   </div>
 </template>

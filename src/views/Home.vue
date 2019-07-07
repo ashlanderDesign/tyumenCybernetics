@@ -1,7 +1,7 @@
 <template>
   <div class="home-container">
     <div class="logo">
-      <img src="../assets/logo.png" alt="">
+      <img src="../assets/SERF.png" alt="">
     </div>
     <div class="form reg">
       <h2 v-if='method == "register"'>Регистрация</h2>
@@ -102,5 +102,8 @@ export default {
     border: none;
     color: #fff;
     background-color: #3067ff;
+  }
+  .logo img {
+    height: 300px
   }
 </style>

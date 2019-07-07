@@ -17,26 +17,26 @@
     </header>
     <div class="map">
       <h1>Выберите уровень</h1>
-      <div class="level open" @click="$router.push('/level?id=1')">
+      <div class="level open" @click="$router.push('/level?id=1')" :style="levelUp == 2 ? 'transform: translate(-30vw);' : ''">
         <span>1</span>
       	<router-link to="/level?id=1" class="level-icon">Авторизуйся, это так просто</router-link>
       </div>
-      <div class="level">
+      <div class="level" :class="levelUp == 2 ? 'open' : ''" :style="levelUp == 2 ? 'transform: translate(-30vw);' : ''">
         <span>2</span>
       	<router-link to="/level?id=2" class="level-icon">Давай знакомиться</router-link>
       </div>
-      <div class="level">
+      <div class="level" :style="levelUp == 2 ? 'transform: translate(-30vw);' : ''">
         <span>3</span>
       	<router-link to="/level?id=3" class="level-icon">Социальная жизнь</router-link>
       </div>
-      <div class="level">
+      <div class="level" :style="levelUp == 2 ? 'transform: translate(-30vw);' : ''">
         <span>4</span>
       	<router-link to="/level?id=4" class="level-icon">Ящиков - много не бывает</router-link>
       </div>
-      <div class="level stage">
+      <div class="level stage" :style="levelUp == 2 ? 'transform: translate(-30vw);' : ''">
       	<router-link to="/level?id=5" class="level-icon">5</router-link>
       </div>
-      <div class="level">
+      <div class="level" :style="levelUp == 2 ? 'transform: translate(-30vw);' : ''">
         <span>6</span>
         <router-link to="/level?id=6" class="level-icon">Сёрфер учит сёрфить</router-link>
       </div>
@@ -48,13 +48,28 @@
 import store from '../store'
 
 export default {
+  data: function() {
+    return {
+      levelUp: 1
+    }
+  },
   computed: {
     username() {
       return store.state.players.name
     },
     score() {
       return store.state.players.score
+    },
+    level() {
+      return store.state.players.level
     }
+  },
+  mounted(){
+    setTimeout(() => {
+      if (this.level == 2) {
+        this.levelUp = this.level;
+      }
+    }, 500);
   }
 }
 </script>
@@ -98,6 +113,7 @@ export default {
   border-radius: 14px;
   box-sizing: border-box;
   border: 4px solid #cacaca;
+  transition: all .6s ease-in;
 }
 
 .level:not(.open) *{
@@ -150,13 +166,11 @@ header .scoreboard{
 .level.open:hover .level-icon{
   opacity: 1;
   color: #fff;
-  transition: all .3s ease-in;
 }
 
 .level-icon {
   text-decoration: none;
   color: #fff;
   font-size: 2rem;
-  width: 30%;
 }
 </style>

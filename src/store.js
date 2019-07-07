@@ -8,7 +8,8 @@ export default new Vuex.Store({
   	players: {
   		name: '',
   		password: '',
-      	score: 0
+      	score: 0,
+      	level: 1
   	},
   	playersList: ["Вася", "Петя", "Маша"],
   	scoreList: [{name: "Вася", score: 250}, {name: "Петя", score: 500}, {name: "Маша", score: 1000}]
@@ -17,6 +18,12 @@ export default new Vuex.Store({
   	addPlayer(state, payload) {
   		state.players.name = payload.name
   		state.players.password = payload.password
+  	},
+  	updateScore(state, payload) {
+  		state.players.score =+ payload
+  	},
+  	updateLevel(state, payload) {
+  		state.players.level++
   	}
   },
   actions: {

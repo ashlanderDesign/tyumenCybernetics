@@ -73,7 +73,7 @@ font-face {
   color: #fff;
 }
 
-.hint-body .close{
+.extra-hint .close,.hint-body .close{
   width: 20%;
   height: 20%;
   border: none;
@@ -102,9 +102,13 @@ font-face {
 .extra-hint{
   position: fixed;
   z-index: 9999999;
-  width: 60vw;
-  height: 60vh;
+  width: 56vw;
+  height: 49vh;
   background-color: #3067ff;
+  border-radius: 14px;
+  padding: 30px 15px;
+  font-size: 24px;
+  color: wheat;
 }
 
 .start{

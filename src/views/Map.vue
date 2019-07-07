@@ -7,12 +7,13 @@
           <div class="username">
             {{username}}
           </div>
-          <div class="score">
-            <img src="../assets/bitcoin.png" alt="">
-            <span class='value'>{{score}}</span>
-          </div>
         </div>
       </div>
+      <div class="score">
+        <img src="../assets/bitcoin.png" alt="">
+        <span class='value'>{{score}}</span>
+      </div>
+      <button class='scoreboard'>Таблица лидеров</button>
     </header>
     <div class="map">
       <h1>Выберите уровень</h1>
@@ -106,6 +107,15 @@ export default {
 
 .level span{
     font-size: 7rem;
+}
+
+header .scoreboard{
+  background-color: #3067ff;
+  color: #fff;
+  border: none;
+  padding: 1vh 2vw;
+  border-radius: 7px;
+  font-size: 1.5rem;
 }
 
 .level.stage{

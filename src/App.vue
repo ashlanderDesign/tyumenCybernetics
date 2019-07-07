@@ -174,6 +174,7 @@ header .account{
   width: 100%;
   color: #3067ff;
   font-size: 1.2rem;
+  margin-left: 1vw;
 }
 
 .user-info .score .value{
